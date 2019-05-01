@@ -22,7 +22,6 @@ public class FileService {
         if (!file.exists()) {
             file.createNewFile();
         }
-
         JAXBContext jaxbContext = jaxbConfig.getJaxbContext();
         Marshaller marshaller = jaxbContext.createMarshaller();
         marshaller.marshal(user, file);

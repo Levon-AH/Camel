@@ -19,9 +19,9 @@ import java.io.IOException;
 @WebServlet("/add")
 public class UserAdd extends HttpServlet {
 
-    @EJB
+    @Inject
     private UserRepository userRepository;
-    @EJB
+    @Inject
     private FileService fileService;
 
     @Override
