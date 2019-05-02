@@ -4,21 +4,20 @@ import entity.User;
 import config.JpaUtil;
 import repository.UserRepository;
 
-import javax.ejb.EJB;
 import javax.ejb.LocalBean;
+import javax.ejb.Singleton;
 import javax.ejb.Stateless;
-import javax.enterprise.inject.Default;
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
+import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
-import javax.persistence.PersistenceUnit;
 
 @LocalBean
-@Stateless
+@Singleton
 public class UserRepositoryImpl implements UserRepository {
 
-//    @PersistenceUnit(name = "myUnit")
-//    private EntityManager entityManager;
+
     @Inject
     private JpaUtil jpaUtil;
 

@@ -1,5 +1,6 @@
 package controller;
 
+import dto.UserDto;
 import entity.User;
 
 import repository.UserRepository;
@@ -19,8 +20,7 @@ import java.io.IOException;
 @WebServlet("/add")
 public class UserAdd extends HttpServlet {
 
-    @Inject
-    private UserRepository userRepository;
+
     @Inject
     private FileService fileService;
 
@@ -31,7 +31,6 @@ public class UserAdd extends HttpServlet {
         User user = new User();
         user.setName(name);
         user.setAge(age);
-        userRepository.add(user);
 
         try {
             fileService.createFromFile(user);

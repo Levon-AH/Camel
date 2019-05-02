@@ -15,11 +15,10 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @XmlElement
     private int id;
-    @XmlElement
+
     private String name;
-    @XmlElement
+
     private int age;
 
 
@@ -48,5 +47,13 @@ public class User {
         this.id = id;
     }
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                '}';
+    }
 }
 
